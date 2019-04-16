@@ -95,18 +95,18 @@
 
 
 
-<meta name="description" content="记录PHP的变量类型和判断变量类型所用到的函数">
+<meta name="description" content="记录PHP常量定义和系统常量">
 <meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="变量类型">
-<meta property="og:url" content="http://yoursite.com/2019/04/13/变量类型/index.html">
+<meta property="og:title" content="常量">
+<meta property="og:url" content="http://yoursite.com/2019/04/16/常量/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="记录PHP的变量类型和判断变量类型所用到的函数">
+<meta property="og:description" content="记录PHP常量定义和系统常量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-16T12:06:31.450Z">
+<meta property="og:updated_time" content="2019-04-16T12:36:27.771Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="变量类型">
-<meta name="twitter:description" content="记录PHP的变量类型和判断变量类型所用到的函数">
+<meta name="twitter:title" content="常量">
+<meta name="twitter:description" content="记录PHP常量定义和系统常量">
 
 
 
@@ -136,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/13/变量类型/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/16/常量/">
 
 
 
 
 
-  <title>变量类型 | Hexo</title>
+  <title>常量 | Hexo</title>
   
 
 
@@ -289,7 +289,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/13/变量类型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/16/常量/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Mr.liu">
@@ -306,7 +306,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">变量类型</h1>
+          <h1 class="post-title" itemprop="name headline">常量</h1>
         
 
         <div class="post-meta">
@@ -321,8 +321,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-13T22:36:42+08:00">
-                2019-04-13
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-16T20:03:56+08:00">
+                2019-04-16
               </time>
             
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  459 字
+                  210 字
                 </span>
               
 
@@ -404,7 +404,7 @@
 
           
               <div class="post-description">
-                  记录PHP的变量类型和判断变量类型所用到的函数
+                  记录PHP常量定义和系统常量
               </div>
           
 
@@ -421,102 +421,51 @@
       
 
       
-        <h1 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h1><ul>
-<li>变量类型分为3大类</li>
+        <h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><ul>
+<li>我把常量分为两种，一种是系统常量，一种是自定常量</li>
 </ul>
-<h2 id="标量-4个"><a href="#标量-4个" class="headerlink" title="标量(4个)"></a>标量(4个)</h2><h4 id="1-整形-int"><a href="#1-整形-int" class="headerlink" title="1. 整形(int)"></a>1. 整形(int)</h4><ul>
-<li>如 1 2 3 这些整数就是整形，通俗点就是没有小数点就是整形</li>
-</ul>
-<h4 id="2-浮点类型-float"><a href="#2-浮点类型-float" class="headerlink" title="2. 浮点类型(float)"></a>2. 浮点类型(float)</h4><ul>
-<li>例子：<blockquote>
-<p>4.123<br>3.213</p>
-</blockquote>
-</li>
-<li>带小数的都是浮点类型</li>
-</ul>
-<h4 id="3-布尔类型-boolean"><a href="#3-布尔类型-boolean" class="headerlink" title="3. 布尔类型(boolean)"></a>3. 布尔类型(boolean)</h4><ul>
-<li>布尔类型只有两种，真(true)和假(false)</li>
-</ul>
-<h4 id="4-字符串"><a href="#4-字符串" class="headerlink" title="4. 字符串"></a>4. 字符串</h4><ul>
-<li>最常见的一种类型,也是最常用的一种。</li>
-<li>只要用双引号或者单引号引起来就是字符串</li>
-</ul>
-<hr>
-<h2 id="混合类型-复合类型，用print输出-2种"><a href="#混合类型-复合类型，用print输出-2种" class="headerlink" title="混合类型(复合类型，用print输出,2种)"></a>混合类型(复合类型，用<code>print</code>输出,2种)</h2><h4 id="1-数组类型"><a href="#1-数组类型" class="headerlink" title="1. 数组类型"></a>1. 数组类型</h4><ul>
-<li>可以让一个变量存储多个数据，可以是任何格式。</li>
-<li>格式:  array(‘下标’ =&gt; ‘值’,可以任意加，用逗号隔开)</li>
-</ul>
-<h4 id="2-对象-object"><a href="#2-对象-object" class="headerlink" title="2. 对象(object)"></a>2. 对象(object)</h4><p>了解不多，解释完毕（😂😂😂😂）</p>
-<hr>
-<h2 id="特殊类型"><a href="#特殊类型" class="headerlink" title="特殊类型"></a>特殊类型</h2><h4 id="1-空-null"><a href="#1-空-null" class="headerlink" title="1. 空(null)"></a>1. 空(null)</h4><h4 id="2-资源-resuorce"><a href="#2-资源-resuorce" class="headerlink" title="2. 资源(resuorce)"></a>2. 资源(resuorce)</h4><ul>
-<li>资源就是电脑上的图片音乐和电影网络请求都是资源</li>
-</ul>
-<hr>
-<h1 id="判断函数"><a href="#判断函数" class="headerlink" title="判断函数"></a>判断函数</h1><ul>
-<li><p>以下函数全部返回布尔值(<code>boolean</code>)</p>
+<h2 id="自定常量"><a href="#自定常量" class="headerlink" title="自定常量"></a>自定常量</h2><ol>
+<li><strong>定义:</strong>常量是一个不能被二次改变的值</li>
+<li><strong>定义格式:</strong><code>define(&#39;name&#39;,&#39;值&#39;)；</code><br>注意：<blockquote>
 <ol>
-<li><p><code>is_array();</code></p>
-<blockquote>
-<p>判断是否是数组型</p>
-</blockquote>
-</li>
-<li><p><code>is_string();</code></p>
-<blockquote>
-<p>判断是否是字符串型</p>
-</blockquote>
-</li>
-<li><p><code>is_bool();</code></p>
-<blockquote>
-<p>判断是否是布尔型</p>
-</blockquote>
-</li>
-<li><p><code>is_float();</code></p>
-<blockquote>
-<p>判断是否是浮点型</p>
-</blockquote>
-</li>
-<li><p><code>is_object();</code></p>
-<blockquote>
-<p>判断是否是对象型</p>
-</blockquote>
-</li>
-<li><p><code>is_int();</code></p>
-<blockquote>
-<p>判断是否是整型</p>
-</blockquote>
-</li>
-<li><p><code>is_number();</code></p>
-<blockquote>
-<p> 判断是否是数值型</p>
-</blockquote>
-</li>
-<li><p><code>is_resuorce();</code></p>
-<blockquote>
-<p> 判断是否是资源型</p>
-</blockquote>
-</li>
-<li><p><code>is_null();</code></p>
-<blockquote>
-<p>判断是否是空值</p>
+<li>值只能是标量</li>
+<li>不能重复定义</li>
+<li>常量不能写到字符串中</li>
+<li>判断常量是否被定义请用<code>defined(&#39;常量名&#39;)</code>这个函数</li>
+<li>注意大写</li>
+<li>定义和输出时不需要加<code>$</code>符号</li>
+</ol>
 </blockquote>
 </li>
 </ol>
-</li>
+<h2 id="系统常量"><a href="#系统常量" class="headerlink" title="系统常量"></a>系统常量</h2><ul>
+<li>我在这里记录了一些常用系统常量</li>
+<li>注:系统常量只能是大写</li>
 </ul>
-<hr>
-<h1 id="强制转换类型总结"><a href="#强制转换类型总结" class="headerlink" title="强制转换类型总结"></a>强制转换类型总结</h1><ol>
-<li><p>空值转换为整型(<code>int</code>)会得到0</p>
-</li>
-<li><p>空值转换为浮点型(<code>float</code>)会变成浮点型的0</p>
-</li>
-<li><p>空值转换为字符串会变成空字符串(<code>string</code>)  </p>
-<blockquote>
-<p>就像这样：<code>$string = &quot;&quot;;</code>//中间不能有任何字符串</p>
+<ol>
+<li><code>__FILE__</code><blockquote>
+<p>获取你文件完整的目录和文件名;</p>
 </blockquote>
 </li>
-<li><p>整形(<code>int</code>)如果后面有字符串,转换后会把字符串去掉留着前面的数字</p>
+<li><code>__LINE__</code><blockquote>
+<p>找到你代码所在的行数</p>
+</blockquote>
 </li>
-<li><p>浮点型(<code>float</code>)如果后面有字符串,转换后会把字符串去掉留着前面的数字包括小数点以后的</p>
+<li><code>__DIR__</code><blockquote>
+<p>获取你文件所在的目录</p>
+</blockquote>
+</li>
+<li><code>PHP_OS</code><blockquote>
+<p>获取PHP版本信息</p>
+</blockquote>
+</li>
+<li><code>PHP_VERSION</code><blockquote>
+<p>获取PHP当前的版本信息</p>
+</blockquote>
+</li>
+<li><code>__FUNCTION__</code><blockquote>
+<p>获取当前的函数名</p>
+</blockquote>
 </li>
 </ol>
 
@@ -549,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/24/笔记/" rel="next" title="笔记">
-                <i class="fa fa-chevron-left"></i> 笔记
+              <a href="/2019/04/13/变量类型/" rel="next" title="变量类型">
+                <i class="fa fa-chevron-left"></i> 变量类型
               </a>
             
           </div>
@@ -558,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/16/常量/" rel="prev" title="常量">
-                常量 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -702,7 +647,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#变量类型"><span class="nav-number">1.</span> <span class="nav-text">变量类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标量-4个"><span class="nav-number">1.1.</span> <span class="nav-text">标量(4个)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-整形-int"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">1. 整形(int)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-浮点类型-float"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">2. 浮点类型(float)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-布尔类型-boolean"><span class="nav-number">1.1.0.3.</span> <span class="nav-text">3. 布尔类型(boolean)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-字符串"><span class="nav-number">1.1.0.4.</span> <span class="nav-text">4. 字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合类型-复合类型，用print输出-2种"><span class="nav-number">1.2.</span> <span class="nav-text">混合类型(复合类型，用print输出,2种)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-数组类型"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1. 数组类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-对象-object"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2. 对象(object)</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊类型"><span class="nav-number">1.3.</span> <span class="nav-text">特殊类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-空-null"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">1. 空(null)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-资源-resuorce"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">2. 资源(resuorce)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#判断函数"><span class="nav-number">2.</span> <span class="nav-text">判断函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#强制转换类型总结"><span class="nav-number">3.</span> <span class="nav-text">强制转换类型总结</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常量"><span class="nav-number">1.</span> <span class="nav-text">常量</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自定常量"><span class="nav-number">1.1.</span> <span class="nav-text">自定常量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统常量"><span class="nav-number">1.2.</span> <span class="nav-text">系统常量</span></a></li></ol></li></ol></div>
             
 
           </div>
