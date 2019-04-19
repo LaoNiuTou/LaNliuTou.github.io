@@ -50,6 +50,7 @@ Untracked files:
 nothing added to commit but untracked files present (use "git add" to track)
 ```
 - 这句话表示你创建了一个名叫README的文件，并且没有跟踪文件，这里需要你手动进行跟踪，Git不会自动帮你。（修改也是一样，在改后需要手动跟踪一下）
+- 只要是出现在 `Untracked files:`这句话下面的文件就是没有被Git追踪的，下次将不会提交
 > 这里的跟踪文件表示Git会帮你监控文件夹的变化，比如你创建了什么文件或者删除添加了代码以及各种文件变化
 
 `$ git add 文件名`
@@ -67,7 +68,59 @@ Changes to be committed:
         new file:   README
 ```
 - 只要在 “Changes to be committed” 这行下面的，就说明是已暂存状态。可以提交了。
+- 可以在将文件加入到追踪文件夹之后修改文件，这时候Git会列出所有被追踪而且被更改的文件
+比如：
+
+```
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   README
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+```
+> 只要是出现在 `Changes to be committed:`下面的文件就表示文件已经被追踪而且被修改了，这时候需要再将文件`$ git add README`一次，将文件添加到暂存文件中。
+
+*注：*
+- Git官网上还提到了一种特殊的情况：如果你现在在`README`中修改了代码，会发什么什么呢？
+```
+$ vim README
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   README
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   README
+```
+> 怎么回事？ `README` 文件出现了两次！一次算未暂存，一次算已暂存，这怎么可能呢？好吧，实际上 Git 只不过暂存了你运行 `$ git add` 命令时的版本，如果现在提交，那么提交的是添加注释前的版本，而非当前工作目录中的版本。所以，运行了 `$ git add` 之后又作了修订的文件，需要重新运行 `$ git add` 把最新版本重新暂存起来：
+```
+$ git add README
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+ 
+        modified:   README
+```
 
 ## 4. 提交到本地代码库
+  一切就绪，准备提交
+> `$ git commit -m "你想在提交时写的信息"`
+ - 如果你关联了远程代码库这时候就可以推送数据到远程端代码库了
 
-## 5. 
+## 5. 推送数据到远程仓库
+`$ git push origin hexo`
+> 其中的hexo是我的远程代码分支，改成你自己的分支或者去掉变成默认
+
+
+# <center>完</center>
