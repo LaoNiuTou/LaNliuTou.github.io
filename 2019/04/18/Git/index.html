@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+  <style>
+      .pace .pace-progress {
+          background: red; /*进度条颜色*/
+          height: 1px;
+      }
+      .pace .pace-progress-inner {
+           box-shadow: 0 0 10px red, 0 0 5px     red; /*阴影颜色*/
+      }
+      .pace .pace-activity {
+          border-top-color: red;    /*上边框颜色*/
+          border-left-color: red;    /*左边框颜色*/
+      }
+  </style>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Git,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git常用语句">
+<meta property="og:url" content="http://yoursite.com/2019/04/18/Git/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-19T08:50:42.590Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git常用语句">
+<meta name="twitter:description" content="最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/18/Git/">
+
+
+
+
+
+  <title>Git常用语句 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">这里是老刘头的个人博客</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-相册">
+          <a href="/photo" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br>
+            
+            相册
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/18/Git/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Mr.liu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/background.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Git常用语句</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-18T11:29:50+08:00">
+                2019-04-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 阅读数
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.4k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5 分钟
+                </span>
+              
+            </div>
+          
+
+          
+              <div class="post-description">
+                  最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="首先配置账号和邮箱"><a href="#首先配置账号和邮箱" class="headerlink" title="首先配置账号和邮箱"></a>首先配置账号和邮箱</h1><ul>
+<li>具体为什么要配我也不是记得很清楚,反正很重要就是了</li>
+</ul>
+<ol>
+<li><code>$ git config --global user.name &quot;账号&quot;</code></li>
+<li><code>$ git config --global user.email &quot;邮箱&quot;</code></li>
+</ol>
+<h1 id="正常流程"><a href="#正常流程" class="headerlink" title="正常流程"></a>正常流程</h1><ol>
+<li>创建仓库</li>
+<li>创建或修改文件</li>
+<li>使用<code>git add</code>命令添加新创建或修改的文件到本地的缓存区（Index）<blockquote>
+<p>如果是刚创建首先将文件添加到跟踪文件内</p>
+</blockquote>
+</li>
+<li>使用<code>git commit</code>命令提交到本地代码库</li>
+<li>（可选，有的时候并没有可以同步的远端代码库）使用<code>git push</code>命令将本地代码库同步到远端代码库</li>
+</ol>
+<h2 id="1-创建仓库"><a href="#1-创建仓库" class="headerlink" title="1. 创建仓库"></a>1. 创建仓库</h2><ul>
+<li>Git有两种仓库形式，一种是用clone克隆下来，另外一种是用代码直接创建一个</li>
+</ul>
+<ol>
+<li><code>$ git init</code>    <blockquote>
+<p>这个语句会在你所执行的目录下面创建一个.Git的隐藏文件夹，所有Git需要的数据和资源都存放在这个目录中，不过现在，仅仅是按照既有的结构框架初始化好了里边所有的文件和目录</p>
+</blockquote>
+</li>
+<li><code>$ git clone git://github.com/schacon/grit.git</code><blockquote>
+<p>上边clone后面的参数是你自己远程仓库的url，和<code>Git init</code>一样，会在目录下创建一个.Git的隐藏文件夹</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="2-检查文件"><a href="#2-检查文件" class="headerlink" title="2. 检查文件"></a>2. 检查文件</h2><ul>
+<li>首先要确定哪些文件当前处于什么状态<br><code>$ git status</code><blockquote>
+<p>如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<p>这说明你现在的工作目录相当干净。换句话说，所有已跟踪文件在上次提交后都未被更改过。此外，上面的信息还表明，当前目录下没有出现任何处于未跟踪的新文件，否则 Git 会在这里列出来。最后，该命令还显示了当前所在的分支是 master，这是默认的分支名称，实际是可以修改的，现在先不用考虑。</p>
+<h2 id="3-添加文件到本地缓存区"><a href="#3-添加文件到本地缓存区" class="headerlink" title="3. 添加文件到本地缓存区"></a>3. 添加文件到本地缓存区</h2><ul>
+<li><p>修改或创建文件后运行 <code>$ git status</code> 会看到该文件出现在未跟踪文件列表中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ vim README</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line"></span><br><span class="line">        README</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这句话表示你创建了一个名叫README的文件，并且没有跟踪文件，这里需要你手动进行跟踪，Git不会自动帮你。（修改也是一样，在改后需要手动跟踪一下）</p>
+</li>
+<li>只要是出现在 <code>Untracked files:</code>这句话下面的文件就是没有被Git追踪的，下次将不会提交<blockquote>
+<p>这里的跟踪文件表示Git会帮你监控文件夹的变化，比如你创建了什么文件或者删除添加了代码以及各种文件变化</p>
+</blockquote>
+</li>
+</ul>
+<p><code>$ git add 文件名</code></p>
+<blockquote>
+<p>这句代码可以将文件加入到跟踪文件内，下次将一并提交。没有在跟踪目录内的文件Git将会忽略</p>
+</blockquote>
+<blockquote>
+<p>也可以将文件名改成绝对路径的目录，如：<code>$ git add c:/git/</code>,将这个目录下所有文件添加到跟踪文件</p>
+</blockquote>
+<ul>
+<li><p>这个时候再<code>$ git status</code>下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只要在 “Changes to be committed” 这行下面的，就说明是已暂存状态。可以提交了。</p>
+</li>
+<li>可以在将文件加入到追踪文件夹之后修改文件，这时候Git会列出所有被追踪而且被更改的文件<br>比如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">        new file:   README</span><br><span class="line"></span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>只要是出现在 <code>Changes to be committed:</code>下面的文件就表示文件已经被追踪而且被修改了，这时候需要再将文件<code>$ git add README</code>一次，将文件添加到暂存文件中。</p>
+</blockquote>
+<p><em>注：</em></p>
+<ul>
+<li>Git官网上还提到了一种特殊的情况：如果你现在在<code>README</code>中修改了代码，会发什么什么呢？<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ vim README</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"></span><br><span class="line">        modified:   README</span><br><span class="line"></span><br><span class="line">Changes not staged for commit:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line"></span><br><span class="line">        modified:   README</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>怎么回事？ <code>README</code> 文件出现了两次！一次算未暂存，一次算已暂存，这怎么可能呢？好吧，实际上 Git 只不过暂存了你运行 <code>$ git add</code> 命令时的版本，如果现在提交，那么提交的是添加注释前的版本，而非当前工作目录中的版本。所以，运行了 <code>$ git add</code> 之后又作了修订的文件，需要重新运行 <code>$ git add</code> 把最新版本重新暂存起来：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add README</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">  (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)</span><br><span class="line"> </span><br><span class="line">        modified:   README</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="4-提交到本地代码库"><a href="#4-提交到本地代码库" class="headerlink" title="4. 提交到本地代码库"></a>4. 提交到本地代码库</h2><p>  一切就绪，准备提交</p>
+<blockquote>
+<p><code>$ git commit -m &quot;你想在提交时写的信息&quot;</code></p>
+<ul>
+<li>如果你关联了远程代码库这时候就可以推送数据到远程端代码库了</li>
+</ul>
+</blockquote>
+<h2 id="5-推送数据到远程仓库"><a href="#5-推送数据到远程仓库" class="headerlink" title="5. 推送数据到远程仓库"></a>5. 推送数据到远程仓库</h2><p><code>$ git push origin hexo</code></p>
+<blockquote>
+<p>其中的hexo是我的远程代码分支，改成你自己的分支或者去掉变成默认</p>
+</blockquote>
+<h1 id="完"><a href="#完" class="headerlink" title="完"></a><center>完</center></h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/16/常量/" rel="next" title="常量">
+                <i class="fa fa-chevron-left"></i> 常量
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/20/1/" rel="prev" title="1">
+                1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/background.jpg" alt="Mr.liu">
+            
+              <p class="site-author-name" itemprop="name">Mr.liu</p>
+              <p class="site-description motion-element" itemprop="description">日常更新日记以及课堂笔记</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先配置账号和邮箱"><span class="nav-number">1.</span> <span class="nav-text">首先配置账号和邮箱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正常流程"><span class="nav-number">2.</span> <span class="nav-text">正常流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建仓库"><span class="nav-number">2.1.</span> <span class="nav-text">1. 创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检查文件"><span class="nav-number">2.2.</span> <span class="nav-text">2. 检查文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文件到本地缓存区"><span class="nav-number">2.3.</span> <span class="nav-text">3. 添加文件到本地缓存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-提交到本地代码库"><span class="nav-number">2.4.</span> <span class="nav-text">4. 提交到本地代码库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-推送数据到远程仓库"><span class="nav-number">2.5.</span> <span class="nav-text">5. 推送数据到远程仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完"><span class="nav-number">3.</span> <span class="nav-text">完</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.liu</span>
+
+  
+</div>
+
+
+  <div class="powered-by"><a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false}});</script></body>
+</html>
