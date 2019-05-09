@@ -4,6 +4,9 @@ date: 2019-04-18 11:29:50
 tags: Git
 description: 最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。
 ---
+
+
+
 # 首先配置账号和邮箱
  - 具体为什么要配我也不是记得很清楚,反正很重要就是了
  1. `$ git config --global user.name "账号"`
@@ -29,7 +32,7 @@ description: 最近又在作死研究Git，发现自己一些常用的基本语�
 - 首先要确定哪些文件当前处于什么状态
 `$ git status`
 > 如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：
-```
+```bash
 $ git status
 On branch master
 nothing to commit, working directory clean
@@ -121,6 +124,3 @@ Changes to be committed:
 ## 5. 推送数据到远程仓库
 `$ git push origin hexo`
 > 其中的hexo是我的远程代码分支，改成你自己的分支或者去掉变成默认
-
-
-# <center>完</center>

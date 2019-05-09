@@ -61,6 +61,11 @@
         {% endif %}
 
         <div class="post-meta">
+            {% if post.top %}
+            <left><i class="fa fa-thumb-tack fa-2x"></i></left>
+            <font color=red>置顶</font>
+            <span class="post-meta-divider">|</span>
+           {% endif %}
           <span class="post-time">
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
@@ -330,6 +335,12 @@
         {{ post.content }}
       {% endif  %}
     </div>
+    <div>
+
+  {% if not is_index %}
+    {% include 'passage-end-tag.swig' %}
+  {% endif %}
+</div>
     {#####################}
     {### END POST BODY ###}
     {#####################}

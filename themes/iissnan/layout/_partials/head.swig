@@ -7,7 +7,7 @@
   <style>
       .pace .pace-progress {
           background: red; /*进度条颜色*/
-          height: 1px;
+          height: 2px;
       }
       .pace .pace-progress-inner {
            box-shadow: 0 0 10px red, 0 0 5px     red; /*阴影颜色*/

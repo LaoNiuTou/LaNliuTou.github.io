@@ -6,11 +6,11 @@ fancybox: false
 comments: true
 ---
 <link rel="stylesheet" href="../lib/album/ins.css"> 	
-<div><center>
-	<img src="http://pq8jku652.bkt.clouddn.com!/__ws13.jpg" id="img1"><img src="https://random.52ecy.cn/randbg.php" id="img1">
-	</center>
-	</center>
-	<div style="clear:both">
+<div>
+
+<img src="http://pq8jku652.bkt.clouddn.com/23.jpg`__ws" id="img1"><img src="http://pq8jku652.bkt.clouddn.com/13.jpg" id="img1"><img src="http://pq8jku652.bkt.clouddn.com/14.jpg" id="img1"><img src="http://pq8jku652.bkt.clouddn.com/15.jpg" id="img1"> 
+
+<div style="clear:both"></div>
 </div>
 
 

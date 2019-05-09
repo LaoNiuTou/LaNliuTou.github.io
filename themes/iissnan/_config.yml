@@ -250,7 +250,7 @@ post_wordcount:
 
 # Declare license on posts
 post_copyright:
-  enable: false
+  enable: true
   license: CC BY-NC-SA 3.0
   license_url: https://creativecommons.org/licenses/by-nc-sa/3.0/
 
@@ -813,3 +813,5 @@ images: images
 # Theme version
 version: 5.1.4
 
+passage_end_tag:
+  enabled: true

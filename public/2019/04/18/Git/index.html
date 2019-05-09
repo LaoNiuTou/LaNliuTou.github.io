@@ -16,7 +16,7 @@
   <style>
       .pace .pace-progress {
           background: red; /*进度条颜色*/
-          height: 1px;
+          height: 2px;
       }
       .pace .pace-progress-inner {
            box-shadow: 0 0 10px red, 0 0 5px     red; /*阴影颜色*/
@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-19T08:50:42.590Z">
+<meta property="og:updated_time" content="2019-04-23T12:37:09.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git常用语句">
 <meta name="twitter:description" content="最近又在作死研究Git，发现自己一些常用的基本语法根本记不住，所以就写在这里，以防万一。本人是个萌新，如有错误请回.....emmmmmmm   好像没开评论，算了算了，有时间再说吧。大多数都是我从Git官网和一些大佬博客上总结（抄）出来的。">
@@ -161,7 +161,7 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
+   
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -308,6 +308,7 @@
         
 
         <div class="post-meta">
+            
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -427,7 +428,7 @@
 <h2 id="2-检查文件"><a href="#2-检查文件" class="headerlink" title="2. 检查文件"></a>2. 检查文件</h2><ul>
 <li>首先要确定哪些文件当前处于什么状态<br><code>$ git status</code><blockquote>
 <p>如果在克隆仓库之后立即执行此命令，会看到类似这样的输出：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">nothing to commit, working directory clean</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
@@ -481,9 +482,19 @@
 <blockquote>
 <p>其中的hexo是我的远程代码分支，改成你自己的分支或者去掉变成默认</p>
 </blockquote>
-<h1 id="完"><a href="#完" class="headerlink" title="完"></a><center>完</center></h1>
+
       
     </div>
+    <div>
+
+  
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:21px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+  
+</div>
     
     
     
@@ -492,6 +503,24 @@
 
     
 
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Mr.liu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/04/18/Git/" title="Git常用语句">http://yoursite.com/2019/04/18/Git/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
     
 
     <footer class="post-footer">
@@ -520,6 +549,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/25/变量作用域/" rel="prev" title="变量作用域">
+                变量作用域 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -598,7 +631,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -639,12 +672,17 @@
           
 		  
 		  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=38592976&auto=0&height=66"></iframe>
-		  
+		 
+      <div id="app"></div>
+ 
+     
+      <div>
+ 
 
           
 
         </div>
-      </section>
+      </div></section>
 
       
       <!--noindex-->
@@ -656,7 +694,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先配置账号和邮箱"><span class="nav-number">1.</span> <span class="nav-text">首先配置账号和邮箱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正常流程"><span class="nav-number">2.</span> <span class="nav-text">正常流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建仓库"><span class="nav-number">2.1.</span> <span class="nav-text">1. 创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检查文件"><span class="nav-number">2.2.</span> <span class="nav-text">2. 检查文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文件到本地缓存区"><span class="nav-number">2.3.</span> <span class="nav-text">3. 添加文件到本地缓存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-提交到本地代码库"><span class="nav-number">2.4.</span> <span class="nav-text">4. 提交到本地代码库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-推送数据到远程仓库"><span class="nav-number">2.5.</span> <span class="nav-text">5. 推送数据到远程仓库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#完"><span class="nav-number">3.</span> <span class="nav-text">完</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#首先配置账号和邮箱"><span class="nav-number">1.</span> <span class="nav-text">首先配置账号和邮箱</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#正常流程"><span class="nav-number">2.</span> <span class="nav-text">正常流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-创建仓库"><span class="nav-number">2.1.</span> <span class="nav-text">1. 创建仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-检查文件"><span class="nav-number">2.2.</span> <span class="nav-text">2. 检查文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-添加文件到本地缓存区"><span class="nav-number">2.3.</span> <span class="nav-text">3. 添加文件到本地缓存区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-提交到本地代码库"><span class="nav-number">2.4.</span> <span class="nav-text">4. 提交到本地代码库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-推送数据到远程仓库"><span class="nav-number">2.5.</span> <span class="nav-text">5. 推送数据到远程仓库</span></a></li></ol></li></ol></div>
             
 
           </div>
