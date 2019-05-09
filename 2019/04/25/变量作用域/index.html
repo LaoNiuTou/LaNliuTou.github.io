@@ -82,7 +82,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="PHP,">
 
 
 
@@ -94,13 +94,14 @@
 
 
 <meta name="description" content="一个变量的作用范围，或者叫做作用周期">
+<meta name="keywords" content="PHP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="变量作用域">
 <meta property="og:url" content="http://yoursite.com/2019/04/25/变量作用域/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="一个变量的作用范围，或者叫做作用周期">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-04-25T07:26:58.397Z">
+<meta property="og:updated_time" content="2019-05-09T12:57:31.556Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="变量作用域">
 <meta name="twitter:description" content="一个变量的作用范围，或者叫做作用周期">
@@ -327,6 +328,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -353,7 +376,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  121 字
+                  159 字
                 </span>
               
 
@@ -400,7 +423,9 @@
 <h2 id="外部变量"><a href="#外部变量" class="headerlink" title="外部变量"></a>外部变量</h2><blockquote>
 <p>在函数体外声明的变量，只能在外部使用，内部变量可以和外部变量一样，一般不这么做，很容易混淆</p>
 </blockquote>
-<h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><ul>
+<h2 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h2><blockquote>
+<p>可以PHP脚本中任意地方使用</p>
+<ul>
 <li>这是系统给你定义好的变量</li>
 </ul>
 <ol>
@@ -411,7 +436,12 @@
 <li>$_SESSION</li>
 <li>$GLOBALS</li>
 </ol>
+</blockquote>
 <h2 id="静态变量"><a href="#静态变量" class="headerlink" title="静态变量"></a>静态变量</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">total</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> $num = <span class="number">2</span>;</span><br><span class="line">	$num* = <span class="number">2</span>;</span><br><span class="line">	<span class="keyword">echo</span> $num;</span><br><span class="line">&#125;</span><br><span class="line">total();  <span class="comment">//4</span></span><br><span class="line">total();  <span class="comment">//8</span></span><br><span class="line">total();  <span class="comment">//16</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>static</code>关键字会使变量记住上一次的值，使变量只会被初始化一次</p>
+</blockquote>
+
       
     </div>
     <div>
@@ -454,6 +484,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"><i class="fa fa-tag"></i> PHP</a>
+          
+        </div>
+      
 
       
       
@@ -473,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/12/24/hello-world/" rel="prev" title="你好，朋友">
-                你好，朋友 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/09/函数/" rel="prev" title="函数">
+                函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -554,7 +590,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
